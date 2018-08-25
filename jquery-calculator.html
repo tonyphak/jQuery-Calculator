@@ -79,8 +79,10 @@ $(document).ready(function() {
 //Create numbers array
 
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
-
+var firstNumber = "";
+var operator = "";
+var secondNumber = "";
+var result = "";
 
 //Create empty array for operators
 
@@ -89,24 +91,46 @@ var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 
 $('.number').on('click', function() {
-
     var buttonPressed = $(this);
     var number = buttonPressed.text();
     console.log(number);
-    $("#result").text(number);
+    
+    if(operator ===""){
+      firstNumber = number;
+      $("#first-number").append(number); 
+    }
+    else{
+      secondNumber = number;
+      $("#second-number").append(number); 
+    }
+    
 });
 
-//$(".number").on("click", function() {
-//var =number
- //console.log
+var operators = ["+", "-", "*", "/", "^"];
+
+$(".operator").on('click', function(){
+ var buttonPressed = $(this);
+ var op = buttonPressed.val();
+ $("#operator").text(op);
+ operator = op;
+})
+
+$(".equal").on("click", function(){
+  if(operator === "+") {
+
+  }
+}
 
 
 
 //Create empty array and push numbers clicked through array
 
-//append on clicks to result screen
 
 //Create equal sign function
+
+
+
+
 
 //Clear function
 
